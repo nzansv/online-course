@@ -37,7 +37,7 @@
     <div class="col-sm-3">
         <ul class="list-group">
             <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-            <li class="list-group-item text-left"><span class="pull-left"><strong class="">Name: </strong></span> ${user.fullname}</li>
+            <li class="list-group-item text-left"><span class="pull-left"><strong class="">Name: </strong></span> ${user.username}</li>
             <li class="list-group-item text-left"><span class="pull-left"><strong class="">Email: </strong></span> ${user.email}</li>
             <li class="list-group-item text-left"><span class="pull-left"><strong class="">Telephone Number: </strong></span>${user.phone_number}</li>
             <li class="list-group-item text-left"><span class="pull-left"><strong class="">Course Name: </strong></span>${course.title}</li>

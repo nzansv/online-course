@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
         try {
             User user = userDao.checkLogin(username, password);
             String destPage = "login.jsp";
+
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
@@ -42,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 
                 session.setMaxInactiveInterval(30*60);
                 Cookie userName = new Cookie("username", username);
+                response.addCookie(userName);
                 userName.setMaxAge(30*60);
 
 

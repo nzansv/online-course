@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="java.lang.String" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +16,23 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
+    <%@ page buffer="16kb" %>
+    <%
+        String userName = null;
+        Cookie[] cookies = request.getCookies();
+        if(cookies !=null){
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("username")) userName = cookie.getValue();
+            }
+        }
+    %>
+    <%!String username;%>
+    <%username = userName;%>
 <div class="collapse navbar-collapse" >
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Hello,<% out.print( username); %> <span class="sr-only">(current)</span> </a>
+        </li>
         <li class="nav-item active">
             <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span> </a>
         </li>
@@ -40,6 +55,7 @@
 
 <div class="card-group" style="font-family: Montserrat">
 
+    <%-- getting all Courses --%>
 <c:forEach var="course" items="${courseList}">
 
     <div class="card">
@@ -60,7 +76,7 @@
     <button type="submit"  value="list" class="btn"  style="background: #F5F5F5;font-size: 15px; padding: 15px 32px 15px 32px;" type="button">View All Courses</button>
         </form>
 </center>
-
+<%@ include file = "footer.jsp" %>
 </body>
 </html>
 
