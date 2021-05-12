@@ -15,10 +15,10 @@
 <br>
 <center><h3 style="font-family: Montserrat">All Courses List</h3></center>
 
-<div class="row mb-5 d-flex justify-content-center" style="font-family: Montserrat">
+<div class="row row-cols-3" style="font-family: Montserrat">
 
-    <div class="card-group " style="font-family: Montserrat">
 <c:forEach var="course" items="${courseList}">
+    <div class="col">
         <div class="card">
             <img class="card-img-top" src="<c:out value="${course.img_src}" />">
             <div class="card-body">
@@ -27,8 +27,10 @@
                 <a href="CourseDetailsServlet?id=${course.id}" class=" btn" style="background: #F5F5F5;">Read more</a>
             </div>
         </div>
-</c:forEach>
     </div>
+</c:forEach>
+
+
     <br>
 
 </div>
