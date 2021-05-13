@@ -37,6 +37,9 @@ public class CourseControllerServlet extends HttpServlet {
                 case "/list":
                     listCourse(request, response);
                     break;
+                case "/delete":
+                    deleteCourse(request, response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -81,6 +84,15 @@ public class CourseControllerServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new ServletException(ex);
         }
+    }
+    private void deleteCourse(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        Course course = new Course(id);
+        courseDAO.deleteBook(course);
+        response.sendRedirect("adminList");
+
     }
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

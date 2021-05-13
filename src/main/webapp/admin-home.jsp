@@ -43,6 +43,7 @@
                     <th scope="col">Short_Information</th>
                     <th scope="col">Duration</th>
                     <th scope="col">Level</th>
+                    <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,6 +54,10 @@
                     <td><c:out value="${course.short_info}" /></td>
                     <td><c:out value="${course.duration}" /></td>
                     <td><c:out value="${course.level}" /></td>
+                    <td>
+
+                        <a href="delete?id=<c:out value='${course.id}' />">Delete</a>
+                    </td>
 
                 </tr>
 </c:forEach>

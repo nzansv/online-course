@@ -29,10 +29,7 @@
         </div>
     </div>
 </c:forEach>
-
-
     <br>
-
 </div>
 
 </body>

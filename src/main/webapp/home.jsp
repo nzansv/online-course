@@ -18,7 +18,6 @@
 <br>
 <br>
 
-
 <div class="card-group" style="font-family: Montserrat">
 
     <%-- getting all Courses --%>

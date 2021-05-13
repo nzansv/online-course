@@ -32,6 +32,10 @@ public class Course {
     public Course() {
     }
 
+    public Course(Integer id) {
+        this.id = id;
+    }
+
     public String getShort_info() {
         return short_info;
     }

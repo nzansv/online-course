@@ -43,7 +43,7 @@
             </center>
         </form>
         <center>
-                <a class="btn" href="registration.jsp" style="background: white; font-size: 15px"  type="submit"  >Create New Account</a>
+                <a class="btn" href="registration.jsp" style="background: transparent; font-size: 15px"  type="submit"  >Create New Account</a>
         </center>
     </div>
 </div>

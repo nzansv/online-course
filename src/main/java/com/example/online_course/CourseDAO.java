@@ -90,6 +90,21 @@ public class CourseDAO {
         return rowInserted;
     }
 
+    public boolean deleteBook(Course course) throws SQLException {
+        String sql = "DELETE FROM courses where id = ?";
+        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/online-course","postgres", "123");
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, course.getId());
+
+        boolean rowDeleted = statement.executeUpdate() > 0;
+        statement.close();
+        connection.close();;
+        return rowDeleted;
+    }
+
+
 
     public List<Course> getLastCourses() throws SQLException, ClassNotFoundException {
         List<Course> courseList = new ArrayList<>();
